@@ -1,13 +1,14 @@
-theme: # NONE - DEFAULT IS
+locale: "nl-NL"
+url: "https://computerhuis.github.io"
+baseurl: ""
 
-sass:
-  sass_dir: _sass
-  style: compressed
+theme: # NONE - DEFAULT IS
 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 exclude:
   - .idea/
