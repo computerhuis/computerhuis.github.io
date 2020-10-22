@@ -1,63 +1,73 @@
 ---
-layout: page
+layout: hero
 permalink: /openingstijden/
-title: "Openingstijden"
+title: Openingstijden
+image: /assets/images/straat.png
 ---
-<figure class="image is-fullwidth">
-    <img src="/assets/images/straat.png">
-</figure>
-<br>
-<div class="columns">
-    <div class="column">
-        <ul>
-            <li>dinsdag van 9.30 uur tot 12.00 uur</li>
-            <li>woensdag van 13.00 uur tot 15.30 uur</li>
-        </ul>
-        <br>
-        <article class="message is-warning">
-            <div class="message-header">
-                <p>Let op</p>
-            </div>
-            <div class="message-body">
-                Cursussen en workshops worden gepland op andere tijdstippen en/of dagen, die via nieuwbrieven bekend
-                gemaakt worden. Voor cursussen en workshops kan men zich aanmelden via de mail.
-            </div>
-        </article>
+<article class="post">
+    <div class="post__image-wrap">
+        <div class="post__image"
+             style="background-image: url(/assets/images/open.jpg)"></div>
     </div>
-    <div class="column">
-        <div class="card">
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="/assets/images/logo.png">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">Werkgroep Cumputerhuis Oost</p>
-                        <p class="subtitle is-6">werkgroep.computerhuis.oost@gmail.com</p>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <p>
-                        Lucas van Leijdenstraat 29<br>
-                        5213 BB 's-Hertogenbosch
-                    </p>
-                    <p>
-                        <i class="fas fa-phone"></i>: <a href="tel:+31738220666">073 - 8220666</a>
-                    </p>
-                    <p>
-                        <i class="far fa-envelope"></i>: <a href="mailto:werkgroep.computerhuis.oost@gmail.com">werkgroep.computerhuis.oost@gmail.com</a>
-                    </p>
-                    <p>
-                        <i class="fas fa-euro-sign"></i>: NL61 RABO 0359 0537 69
-                    </p>
-                    <p>
-                        KvK: 80444423
-                    </p>
-                </div>
-            </div>
+    <div class="post__content-wrap">
+        <div class="post__content">
+            <h2 class="post__title">Openingstijden</h2>
+            <p class="post__description">
+                Wij zijn geopend op dinsdag van 9.30 uur tot 12.00 uur en woensdag van 13.00 uur tot 15.30 uur.
+                <br>
+                <br>
+                Cursussen en workshops worden gepland op andere tijdstippen en/of dagen, die via nieuwsbrieven bekend
+                gemaakt worden. Voor cursussen en workshops kan men zich aanmelden via de mail.
+            </p>
         </div>
     </div>
-</div>
+</article>
+
+<article class="post">
+    <div class="post__image-wrap">
+        <div class="post__image" id="map"></div>
+    </div>
+    <div class="post__content-wrap">
+        <div class="post__content">
+            <h2 class="post__title">Route &amp; Contact</h2>
+            <p class="post__description">
+                <i class="fas fa-map-marked-alt"></i>:
+                <a target="_blank"
+                   href="https://www.google.nl/maps/place/Lucas+van+Leydenstraat+29,+5213+BB+'s-Hertogenbosch">
+                    Lucas van Leijdenstraat 29, 5213 BB 's-Hertogenbosch
+                </a> <br>
+                <br>
+                <i class="fas fa-phone"></i>: &nbsp;
+                <a href="tel:+31738220666">073 - 8220666</a> <br>
+                <br>
+                <i class="fa fa-envelope"></i>: &nbsp;
+                <a href=mailto:werkgroep.computerhuis.oost@gmail.com"> werkgroep.computerhuis.oost@gmail.com</a>
+            </p>
+        </div>
+    </div>
+</article>
+
+<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+<script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script>
+    // Creating map options
+    var mapOptions = {
+        center: [51.6964958, 5.3215251],
+        zoom: 18
+    }
+
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+    // Adding layer to the map
+    map.addLayer(layer);
+
+    // Creating a marker
+    var marker = L.marker([51.6964958, 5.3215251]);
+
+    // Adding marker to the map
+    marker.addTo(map);
+</script>

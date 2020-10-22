@@ -1,22 +1,29 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <img src="/assets/images/logo.png"> &nbsp;Werkgroep Computerhuis Oost
+<header class="header">
+    <div class="wrap">
+        <a href="/" class="header__title cc-active">
+            Werkgroep Computerhuis Oost
+        </a>
+        <div class="menu">
+            <div class="menu__toggle js-menu-toggle">
+                <div class="menu__toggle__icon"></div>
+            </div>
+            <div class="menu__wrap">
+                <ul class="menu__list">
+                    {% for nav in site.data.navigation %}
+                    <li class="menu__list__item">
+                        <a
+                            {% if nav.url== page.url %}
+                            class="menu__list__item__link active-link"
+                            {% else %}
+                            class="menu__list__item__link cc-active"
+                            {% endif %}
+                            href="{{ nav.url }}">
+                            {{ nav.text }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
-
-        <div class="navbar-end">
-            <a class="navbar-item" href="/">
-                <i class="fas fa-home"></i>
-            </a>
-
-            {% for nav in site.data.navigation %}
-            <a{% if nav.url == page.url %} class="navbar-item is_active" {% else %} class="navbar-item" {% endif %}
-            href="{{ nav.url }}">
-            {{ nav.text }}
-            </a>
-            {% endfor %}
-        </div>
     </div>
-</nav>
+</header>
