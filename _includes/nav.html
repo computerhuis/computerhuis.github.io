@@ -1,29 +1,28 @@
-<header class="header">
-    <div class="wrap">
-        <a href="/" class="header__title cc-active">
-            Werkgroep Computerhuis Oost
+<nav class="navbar navbar-expand-lg header">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/images/logo.png"> Computerhuis Oost
         </a>
-        <div class="menu">
-            <div class="menu__toggle js-menu-toggle">
-                <div class="menu__toggle__icon"></div>
-            </div>
-            <div class="menu__wrap">
-                <ul class="menu__list">
-                    {% for nav in site.data.navigation %}
-                    <li class="menu__list__item">
-                        <a
-                            {% if nav.url== page.url %}
-                            class="menu__list__item__link active-link"
-                            {% else %}
-                            class="menu__list__item__link cc-active"
-                            {% endif %}
-                            href="{{ nav.url }}">
-                            {{ nav.text }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                {% for nav in site.data.navigation %}
+                <a {% if nav.url== page.url %}
+                   class="nav-link active"
+                   {% else %}
+                   class="nav-link"
+                   {% endif %}
+                    href="{{ nav.url }}">
+                    {{ nav.text }}
+                    {% if nav.url== page.url %}
+                    <span class="sr-only">(current)</span>
+                    {% endif %}
+                </a>
+                {% endfor %}
             </div>
         </div>
     </div>
-</header>
+</nav>
