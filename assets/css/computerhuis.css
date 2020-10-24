@@ -436,6 +436,26 @@ ol, ul {
     }
 }
 
+.post__description {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+@media only screen and (min-width: 1220px) {
+    .post__descriptionl {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .post__description {
+        font-size: 20px;
+    }
+}
+
 /* --[ single-post ]------------------------------------------------------------------------------------------------- */
 .single-post {
     position: relative;
