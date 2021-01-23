@@ -14,11 +14,14 @@
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/nl_NL/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <!-- Your Chat Plugin code -->
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="102929198475313"
+     greeting_dialog_display="fade"
+     greeting_dialog_delay="10"
      theme_color="#00FF00">
 </div>
