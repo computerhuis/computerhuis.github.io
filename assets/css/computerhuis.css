@@ -181,6 +181,7 @@ ol, ul {
 
 .header .navbar-brand, .header .nav-link, .header .navbar-toggler {
     color: #2a2f36;
+    white-space: nowrap;
 }
 
 .header .navbar-brand:hover, .header .nav-link:hover, .header .nav-link.active {
@@ -310,6 +311,12 @@ ol, ul {
     bottom: 0;
     left: 0;
     background: rgba(19, 41, 48, .8)
+}
+
+.hero h1 {
+    color: #fff;
+    opacity: 70%;
+    text-align: center;
 }
 
 /* ---[ post ]------------------------------------------------------------------------------------------------------- */
@@ -492,7 +499,7 @@ ol, ul {
     }
 }
 
-/* --[ footer ]------------------------------------------------------------------------------------------------- */
+/* --[ footer ]------------------------------------------------------------------------------------------------------ */
 .footer {
     clear: both;
     padding: 40px 0;
@@ -530,4 +537,11 @@ ol, ul {
     .footer {
         padding: 80px 0
     }
+}
+
+/* --[ facebook ]---------------------------------------------------------------------------------------------------- */
+.fb-page,
+.fb-page span,
+.fb-page span iframe[style] {
+    width: 100% !important;
 }
